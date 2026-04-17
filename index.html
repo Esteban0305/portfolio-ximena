@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio Creativo | Ximena Jardón</title>
+    <meta
+      name="description"
+      content="Portafolio creativo de Ximena Jardón: fotografía, storytelling, comunicación visual y proyectos destacados."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              canvas: '#fbf5f1',
+              cream: '#fff8f3',
+              blush: '#f8c48a',
+              skywash: '#cfe4f5',
+              skydeep: '#a9c9e8',
+              tealsoft: '#92d0df',
+              cocoa: '#5b463f',
+              cocoaLight: '#8a7269',
+              ink: '#1f2937',
+            },
+            boxShadow: {
+              float: '0 24px 60px rgba(91, 70, 63, 0.12)',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              script: ['Great Vibes', 'cursive'],
+            },
+            backgroundImage: {
+              'hero-blur':
+                'radial-gradient(circle at 70% 25%, rgba(207, 228, 245, 0.95), rgba(207, 228, 245, 0.0) 42%), radial-gradient(circle at 15% 80%, rgba(248, 196, 138, 0.55), rgba(248, 196, 138, 0.0) 28%)',
+              'card-glow':
+                'linear-gradient(135deg, rgba(255,255,255,0.88), rgba(255,248,243,0.72))',
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background:
+          radial-gradient(circle at top left, rgba(248, 196, 138, 0.18), transparent 24%),
+          radial-gradient(circle at 88% 14%, rgba(169, 201, 232, 0.22), transparent 22%),
+          linear-gradient(180deg, #fbf5f1 0%, #fff8f3 100%);
+      }
+
+      ::selection {
+        background: rgba(146, 208, 223, 0.55);
+        color: #1f2937;
+      }
+    </style>
+  </head>
+  <body class="font-sans text-ink antialiased">
+    <div class="relative overflow-hidden">
+      <div class="pointer-events-none absolute inset-0 bg-hero-blur opacity-95"></div>
+      <div class="pointer-events-none absolute -left-24 top-28 h-72 w-72 rounded-full bg-blush/25 blur-3xl"></div>
+      <div class="pointer-events-none absolute right-0 top-10 h-96 w-96 rounded-full bg-skydeep/20 blur-3xl"></div>
+
+      <header class="relative z-10">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-10">
+          <a href="#inicio" class="group flex items-center gap-3">
+            <div>
+              <p class="font-script text-3xl leading-none text-cocoa">Ximena Jardón</p>
+              <p class="text-xs uppercase tracking-[0.35em] text-cocoaLight mt-1">Portafolio creativo</p>
+            </div>
+          </a>
+
+          <div class="hidden items-center gap-8 text-sm font-medium text-cocoaLight md:flex">
+            <a class="transition hover:text-cocoa" href="#about">Sobre mí</a>
+            <a class="transition hover:text-cocoa" href="#skills">Habilidades</a>
+            <a class="transition hover:text-cocoa" href="projects.html">Proyectos</a>
+            <a class="transition hover:text-cocoa" href="#contact">Contacto</a>
+          </div>
+        </nav>
+      </header>
+
+      <main class="relative z-10">
+        <section id="inicio" class="mx-auto grid max-w-7xl items-center gap-6 px-6 pb-12 pt-0 sm:gap-8 sm:pb-14 lg:grid-cols-[1.08fr_0.92fr] lg:gap-12 lg:px-10 lg:pb-24 lg:pt-20">
+          <div class="max-w-3xl">
+            <div class="mb-6 inline-flex items-center gap-3 rounded-full border border-white/70 bg-white/70 px-4 py-2 text-sm text-cocoa shadow-float backdrop-blur">
+              <span class="h-2.5 w-2.5 rounded-full bg-tealsoft"></span>
+              Comunicación visual · fotografía · storytelling
+            </div>
+
+            <h1 class="mt-2 max-w-2xl text-4xl font-black tracking-tight text-cocoa sm:text-5xl lg:text-7xl">
+              Un portafolio
+              <span class="block font-script text-5xl font-normal text-skydeep sm:text-6xl lg:text-8xl">creativo</span>
+              con alma editorial.
+            </h1>
+
+            <p class="mt-4 max-w-2xl text-base leading-7 text-cocoaLight sm:mt-6 sm:text-lg lg:leading-8 lg:text-xl">
+              Soy Ximena Jardón, licenciada en Turismo y creadora visual apasionada por la fotografía, la escritura y el diseño de historias que conectan con las personas.
+            </p>
+
+            <div class="mt-6 flex flex-col gap-3 sm:mt-8 sm:gap-4 sm:flex-row">
+              <a href="projects.html" class="inline-flex items-center justify-center rounded-full bg-cocoa px-6 py-3 text-xs font-semibold text-cream shadow-float transition duration-300 hover:-translate-y-1 hover:bg-[#4b3933] sm:px-7 sm:py-4 sm:text-sm">
+                Ver proyectos
+              </a>
+              <a href="#contact" class="inline-flex items-center justify-center rounded-full border border-cocoa/20 bg-white/70 px-6 py-3 text-xs font-semibold text-cocoa shadow-float backdrop-blur transition duration-300 hover:-translate-y-1 hover:bg-white sm:px-7 sm:py-4 sm:text-sm">
+                Contactarme
+              </a>
+            </div>
+
+            <div class="mt-7 grid max-w-2xl gap-3 sm:mt-10 sm:gap-4 sm:grid-cols-3">
+              <div class="rounded-2xl border border-white/80 bg-white/70 p-4 shadow-float backdrop-blur sm:rounded-3xl sm:p-5">
+                <p class="text-2xl font-extrabold text-cocoa sm:text-3xl">+4</p>
+                <p class="mt-1 text-xs text-cocoaLight sm:text-sm">Proyectos destacados</p>
+              </div>
+              <div class="rounded-2xl border border-white/80 bg-white/70 p-4 shadow-float backdrop-blur sm:rounded-3xl sm:p-5">
+                <p class="text-2xl font-extrabold text-cocoa sm:text-3xl">Visual</p>
+                <p class="mt-1 text-xs text-cocoaLight sm:text-sm">Narrativa y estética</p>
+              </div>
+              <div class="rounded-2xl border border-white/80 bg-white/70 p-4 shadow-float backdrop-blur sm:rounded-3xl sm:p-5">
+                <p class="text-2xl font-extrabold text-cocoa sm:text-3xl">Story</p>
+                <p class="mt-1 text-xs text-cocoaLight sm:text-sm">Ideas con intención</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative mx-auto w-full max-w-md sm:max-w-xl">
+            <div class="absolute -left-4 top-8 h-20 w-20 rounded-full bg-blush/50 blur-2xl sm:-left-6 sm:top-10 sm:h-28 sm:w-28"></div>
+            <div class="absolute -right-4 bottom-6 h-28 w-28 rounded-full bg-skydeep/35 blur-3xl sm:-right-6 sm:bottom-8 sm:h-40 sm:w-40"></div>
+
+            <div class="relative rounded-[1.75rem] border border-white/70 bg-card-glow p-4 shadow-float backdrop-blur-xl sm:rounded-[2.25rem] sm:p-5">
+              <div class="overflow-hidden rounded-[1.5rem] border border-white/80 bg-cream sm:rounded-[1.75rem]">
+                <img src="assets/img/me.png" alt="Ximena Jardón" class="h-full w-full object-cover" />
+              </div>
+              <div class="absolute -bottom-4 left-1/2 w-[86%] -translate-x-1/2 rounded-2xl border border-white/70 bg-white/80 px-4 py-3 text-center shadow-float backdrop-blur sm:rounded-3xl sm:-bottom-5 sm:px-6 sm:py-4">
+                <p class="text-xs uppercase tracking-[0.35em] text-cocoaLight">Portfolio creativo</p>
+                <p class="mt-1 text-sm font-semibold text-cocoa sm:text-lg">Ximena Jardón · Visual storyteller</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" class="mx-auto max-w-7xl px-6 py-10 lg:px-10">
+          <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+            <div class="rounded-[2rem] border border-white/70 bg-white/75 p-8 shadow-float backdrop-blur">
+              <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cocoaLight">Sobre mí</p>
+              <h2 class="mt-3 text-3xl font-black text-cocoa sm:text-4xl">Una mirada cálida, curiosa y muy visual.</h2>
+              <p class="mt-5 text-base leading-8 text-cocoaLight">
+                Me gusta convertir ideas, imágenes y palabras en piezas que transmitan emoción. Mi trabajo mezcla comunicación, creatividad y sensibilidad para construir proyectos con identidad propia.
+              </p>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div class="rounded-[1.75rem] bg-[#fdf0e1] p-6 shadow-float">
+                <p class="text-sm font-semibold uppercase tracking-[0.25em] text-cocoaLight">Enfoque</p>
+                <p class="mt-2 text-2xl font-bold text-cocoa">Fotografía + storytelling</p>
+              </div>
+              <div class="rounded-[1.75rem] bg-[#e8f3fa] p-6 shadow-float">
+                <p class="text-sm font-semibold uppercase tracking-[0.25em] text-cocoaLight">Estilo</p>
+                <p class="mt-2 text-2xl font-bold text-cocoa">Suave, editorial y artesanal</p>
+              </div>
+              <div class="rounded-[1.75rem] bg-[#fdf8f3] p-6 shadow-float sm:col-span-2">
+                <p class="text-sm font-semibold uppercase tracking-[0.25em] text-cocoaLight">Lo que hago</p>
+                <p class="mt-2 text-2xl font-bold text-cocoa">Contenido visual, comunicación digital y experiencias con intención.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" class="mx-auto max-w-7xl px-6 py-12 lg:px-10">
+          <div class="mx-auto max-w-3xl text-center">
+            <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cocoaLight">Habilidades</p>
+            <h2 class="mt-2 text-3xl font-black text-cocoa sm:text-4xl">Lo que mejor hago</h2>
+            <p class="mt-4 text-cocoaLight">
+              Una mezcla de estrategia, sensibilidad visual y ejecución creativa para proyectos que necesitan presencia y personalidad.
+            </p>
+          </div>
+
+          <div class="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+            <div class="rounded-[1.75rem] border border-white/70 bg-white/75 p-6 shadow-float backdrop-blur">
+              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#fdf0e1] text-cocoa">
+                <svg viewBox="0 0 24 24" class="h-7 w-7 fill-none stroke-current stroke-2">
+                  <path d="M4 19V5" />
+                  <path d="M8 17V9" />
+                  <path d="M12 19V7" />
+                  <path d="M16 14v-5" />
+                  <path d="M20 19V3" />
+                </svg>
+              </div>
+              <h3 class="mt-5 text-lg font-bold text-cocoa">Redes sociales</h3>
+              <p class="mt-2 text-sm leading-6 text-cocoaLight">Gestión de contenidos con foco en comunidad y consistencia visual.</p>
+            </div>
+            <div class="rounded-[1.75rem] border border-white/70 bg-white/75 p-6 shadow-float backdrop-blur">
+              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#e8f3fa] text-cocoa">
+                <svg viewBox="0 0 24 24" class="h-7 w-7 fill-none stroke-current stroke-2">
+                  <path d="M4 19l5-5 4 4 7-9" />
+                  <path d="M14 9h6v6" />
+                </svg>
+              </div>
+              <h3 class="mt-5 text-lg font-bold text-cocoa">Análisis digital</h3>
+              <p class="mt-2 text-sm leading-6 text-cocoaLight">Lectura de resultados y decisiones visuales más estratégicas.</p>
+            </div>
+            <div class="rounded-[1.75rem] border border-white/70 bg-white/75 p-6 shadow-float backdrop-blur">
+              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f8c48a]/35 text-cocoa">
+                <svg viewBox="0 0 24 24" class="h-7 w-7 fill-none stroke-current stroke-2">
+                  <path d="M7 7h10" />
+                  <path d="M7 12h10" />
+                  <path d="M7 17h6" />
+                  <path d="M5 5h14v14H5z" />
+                </svg>
+              </div>
+              <h3 class="mt-5 text-lg font-bold text-cocoa">Stories y reels</h3>
+              <p class="mt-2 text-sm leading-6 text-cocoaLight">Programación y publicación con ritmo, intención y estética.</p>
+            </div>
+            <div class="rounded-[1.75rem] border border-white/70 bg-white/75 p-6 shadow-float backdrop-blur">
+              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#fdf8f3] text-cocoa">
+                <svg viewBox="0 0 24 24" class="h-7 w-7 fill-none stroke-current stroke-2">
+                  <path d="M4 20l4-1 10-10-3-3L5 16l-1 4z" />
+                  <path d="M13 7l3 3" />
+                </svg>
+              </div>
+              <h3 class="mt-5 text-lg font-bold text-cocoa">Campañas</h3>
+              <p class="mt-2 text-sm leading-6 text-cocoaLight">Ideación y ejecución de campañas de contenido atractivas.</p>
+            </div>
+            <div class="rounded-[1.75rem] border border-white/70 bg-white/75 p-6 shadow-float backdrop-blur">
+              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#dff1ee] text-cocoa">
+                <svg viewBox="0 0 24 24" class="h-7 w-7 fill-none stroke-current stroke-2">
+                  <path d="M4 20h16" />
+                  <path d="M7 16l10-10 3 3-10 10H7v-3z" />
+                </svg>
+              </div>
+              <h3 class="mt-5 text-lg font-bold text-cocoa">Storytelling</h3>
+              <p class="mt-2 text-sm leading-6 text-cocoaLight">Textos con sensibilidad, claridad y personalidad narrativa.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="w-full bg-cocoa py-0 text-cream lg:py-0">
+          <div class="mx-auto grid max-w-7xl gap-8 px-6 py-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:px-10 lg:py-16">
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-[0.3em] text-cream/65">Contacto</p>
+              <h2 class="mt-3 text-4xl font-black sm:text-5xl">¿Te gustó el portafolio?</h2>
+              <p class="mt-4 max-w-2xl text-base leading-8 text-cream/80">
+                Si quieres colaborar, contratar contenido visual o platicar sobre ideas creativas, puedes escribirme directamente.
+              </p>
+            </div>
+
+            <div class="rounded-[1.75rem] border border-white/10 bg-white/8 p-6 shadow-float backdrop-blur-sm">
+              <p class="text-sm uppercase tracking-[0.25em] text-cream/65">Datos de contacto</p>
+              <div class="mt-5 space-y-4">
+                <div>
+                  <p class="text-xs uppercase tracking-[0.3em] text-cream/55">Correo</p>
+                  <a class="mt-1 block text-xl font-semibold text-cream transition hover:text-[#dff1ee]" href="mailto:jardonximena975@gmail.com">jardonximena975@gmail.com</a>
+                </div>
+                <div>
+                  <p class="text-xs uppercase tracking-[0.3em] text-cream/55">Teléfono</p>
+                  <p class="mt-1 text-xl font-semibold text-cream">722 368 4424</p>
+                </div>
+                <div>
+                  <p class="text-xs uppercase tracking-[0.3em] text-cream/55">Ubicación</p>
+                  <p class="mt-1 text-xl font-semibold text-cream">Cabo San Lucas, BCS</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
