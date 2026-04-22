@@ -42,6 +42,17 @@
           linear-gradient(180deg, #fbf5f1 0%, #fff8f3 100%);
       }
       .grid-balance { text-wrap: balance; }
+      .media-rail {
+        display: flex;
+        gap: 1rem;
+        overflow-x: auto;
+        padding-bottom: 0.4rem;
+        scroll-snap-type: x mandatory;
+      }
+      .media-rail > * { scroll-snap-align: start; }
+      .media-rail::-webkit-scrollbar { height: 10px; }
+      .media-rail::-webkit-scrollbar-track { background: rgba(91, 70, 63, 0.08); border-radius: 9999px; }
+      .media-rail::-webkit-scrollbar-thumb { background: rgba(91, 70, 63, 0.35); border-radius: 9999px; }
     </style>
   </head>
   <body class="font-sans text-ink antialiased">
@@ -65,121 +76,251 @@
           <p class="mt-5 text-lg leading-8 text-cocoaLight grid-balance">Cada proyecto tiene una intención distinta, pero todos comparten una misma línea: comunicar con belleza, cercanía y claridad.</p>
         </section>
 
-        <section class="mt-12 space-y-8">
-          <article class="overflow-hidden rounded-[2rem] border border-white/80 bg-white/70 shadow-float backdrop-blur">
-            <div class="grid gap-0 lg:grid-cols-[0.95fr_1.05fr]">
-              <div class="p-8 lg:p-10">
+        <section class="mt-12 space-y-10">
+          <article class="overflow-hidden rounded-[2rem] border border-white/80 bg-white/75 shadow-float backdrop-blur">
+            <div class="p-8 lg:p-10">
+              <div class="max-w-3xl">
                 <span class="inline-flex rounded-full bg-[#fdf0e1] px-4 py-2 text-xs font-bold uppercase tracking-[0.3em] text-cocoa">Arise Luxury Life Style</span>
-                <h2 class="mt-4 text-3xl font-black text-cocoa">Contenido para una marca exclusiva.</h2>
-                <p class="mt-4 text-base leading-8 text-cocoaLight">Un proyecto de largo plazo enfocado en crear contenido para redes sociales, aumentar la difusión y fortalecer la conexión con clientes recurrentes.</p>
-                <div class="mt-6 flex flex-wrap gap-2">
-                  <span class="rounded-full bg-[#fdf0e1] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cocoa">Fotografía</span>
-                  <span class="rounded-full bg-[#e8f3fa] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cocoa">Marketing</span>
-                  <span class="rounded-full bg-[#dff1ee] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cocoa">Storytelling</span>
-                  <span class="rounded-full bg-[#f8c48a]/30 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cocoa">Diseño</span>
-                </div>
+                <h2 class="mt-4 text-3xl font-black text-cocoa">Narrativa visual para una experiencia premium.</h2>
+                <p class="mt-4 text-base leading-8 text-cocoaLight">Desarrollo de contenido editorial y comercial para reforzar presencia digital, comunicar estilo de vida y aumentar conversión desde redes sociales hacia contacto directo y reservas.</p>
                 <ul class="mt-6 space-y-3 text-cocoaLight">
-                  <li>• Creación de campañas publicitarias</li>
-                  <li>• Desarrollo de códigos QR para reservas y acceso rápido a Instagram</li>
-                  <li>• Diseño de menús</li>
-                  <li>• Campañas para interactuar con la comunidad</li>
+                  <li>• Dirección creativa de piezas fotográficas y video corto</li>
+                  <li>• Diseño de menús, formatos promocionales y adaptación a campañas</li>
+                  <li>• Integración de recursos de acceso rápido (QR y llamados a la acción)</li>
+                  <li>• Publicaciones orientadas a conexión con comunidad recurrente</li>
                 </ul>
               </div>
-              <div class="grid grid-cols-2 gap-3 p-5 sm:grid-cols-3">
-                <button type="button" class="group overflow-hidden rounded-[1.4rem] focus:outline-none" data-src="assets/img/arise/1.png" data-title="Arise 1" data-project="Arise Luxury Life Style"><img src="assets/img/arise/1.png" alt="Arise 1" class="h-52 w-full object-cover transition duration-300 group-hover:scale-105" /></button>
-                <button type="button" class="group overflow-hidden rounded-[1.4rem] focus:outline-none" data-src="assets/img/arise/2.png" data-title="Arise 2" data-project="Arise Luxury Life Style"><img src="assets/img/arise/2.png" alt="Arise 2" class="h-52 w-full object-cover transition duration-300 group-hover:scale-105" /></button>
-                <button type="button" class="group overflow-hidden rounded-[1.4rem] focus:outline-none" data-src="assets/img/arise/3.png" data-title="Arise 3" data-project="Arise Luxury Life Style"><img src="assets/img/arise/3.png" alt="Arise 3" class="h-52 w-full object-cover transition duration-300 group-hover:scale-105" /></button>
-                <button type="button" class="group overflow-hidden rounded-[1.4rem] focus:outline-none" data-src="assets/img/arise/menu%201.png" data-title="Arise menu 1" data-project="Arise Luxury Life Style"><img src="assets/img/arise/menu%201.png" alt="Arise menú 1" class="h-52 w-full object-cover transition duration-300 group-hover:scale-105" /></button>
-                <button type="button" class="group overflow-hidden rounded-[1.4rem] focus:outline-none" data-src="assets/img/arise/menu%202.png" data-title="Arise menu 2" data-project="Arise Luxury Life Style"><img src="assets/img/arise/menu%202.png" alt="Arise menú 2" class="h-52 w-full object-cover transition duration-300 group-hover:scale-105" /></button>
-                <button type="button" class="group overflow-hidden rounded-[1.4rem] focus:outline-none sm:col-span-3" data-src="assets/img/arise/menu%203.png" data-title="Arise menu 3" data-project="Arise Luxury Life Style"><img src="assets/img/arise/menu%203.png" alt="Arise menú 3" class="h-60 w-full object-cover transition duration-300 group-hover:scale-105" /></button>
+
+              <div class="mt-8 media-rail">
+                <figure class="w-[280px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/arise/1.png" data-title="Arise · Campaña lifestyle" data-project="Arise Luxury Life Style" data-caption="Escena enfocada en atmósfera premium para reforzar identidad y estilo de marca.">
+                    <img src="assets/img/arise/1.png" alt="Campaña lifestyle de Arise" class="h-72 w-full object-cover transition duration-300 group-hover:scale-105" />
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Campaña lifestyle con enfoque en ambiente y exclusividad.</figcaption>
+                </figure>
+                <figure class="w-[280px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/arise/2.png" data-title="Arise · Producto y servicio" data-project="Arise Luxury Life Style" data-caption="Fotografía orientada a resaltar experiencia de consumo y detalle visual del servicio.">
+                    <img src="assets/img/arise/2.png" alt="Producto y servicio Arise" class="h-72 w-full object-cover transition duration-300 group-hover:scale-105" />
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Contenido para feed con enfoque en propuesta de valor.</figcaption>
+                </figure>
+                <figure class="w-[280px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/arise/3.png" data-title="Arise · Detalle de marca" data-project="Arise Luxury Life Style" data-caption="Toma pensada para reforzar reconocimiento visual y consistencia de branding.">
+                    <img src="assets/img/arise/3.png" alt="Detalle visual de marca Arise" class="h-72 w-full object-cover transition duration-300 group-hover:scale-105" />
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Detalle editorial para fortalecer identidad.</figcaption>
+                </figure>
+                <figure class="w-[280px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/arise/menu%201.png" data-title="Arise · Diseño de menú 1" data-project="Arise Luxury Life Style" data-caption="Propuesta gráfica de menú diseñada para lectura rápida y percepción premium.">
+                    <img src="assets/img/arise/menu%201.png" alt="Diseño de menú Arise 1" class="h-72 w-full object-cover transition duration-300 group-hover:scale-105" />
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Diseño de menú orientado a claridad y estilo.</figcaption>
+                </figure>
+                <figure class="w-[280px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/arise/menu%202.png" data-title="Arise · Diseño de menú 2" data-project="Arise Luxury Life Style" data-caption="Variación visual para pruebas de composición y jerarquía de información.">
+                    <img src="assets/img/arise/menu%202.png" alt="Diseño de menú Arise 2" class="h-72 w-full object-cover transition duration-300 group-hover:scale-105" />
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Segunda versión con ajustes narrativos y de estructura.</figcaption>
+                </figure>
+                <figure class="w-[280px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/arise/menu%203.png" data-title="Arise · Diseño de menú 3" data-project="Arise Luxury Life Style" data-caption="Versión final adaptada para uso operativo y digital.">
+                    <img src="assets/img/arise/menu%203.png" alt="Diseño de menú Arise 3" class="h-72 w-full object-cover transition duration-300 group-hover:scale-105" />
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Aplicación final lista para difusión.</figcaption>
+                </figure>
+
+                <figure class="w-[360px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group relative block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/arise/WhatsApp%20Video%202026-04-22%20at%2012.40.08.mp4" data-type="video" data-title="Arise · Video editorial 1" data-project="Arise Luxury Life Style">
+                    <video preload="metadata" muted playsinline class="h-72 w-full bg-black object-cover transition duration-300 group-hover:scale-105 pointer-events-none">
+                      <source src="assets/img/arise/WhatsApp%20Video%202026-04-22%20at%2012.40.08.mp4" type="video/mp4" />
+                    </video>
+                    <span class="pointer-events-none absolute inset-x-0 bottom-3 mx-auto inline-flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-white">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                    </span>
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Video corto para reforzar tono de marca y dinamismo en redes.</figcaption>
+                </figure>
+                <figure class="w-[360px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group relative block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/arise/WhatsApp%20Video%202026-04-22%20at%2012.40.12.mp4" data-type="video" data-title="Arise · Video editorial 2" data-project="Arise Luxury Life Style">
+                    <video preload="metadata" muted playsinline class="h-72 w-full bg-black object-cover transition duration-300 group-hover:scale-105 pointer-events-none">
+                      <source src="assets/img/arise/WhatsApp%20Video%202026-04-22%20at%2012.40.12.mp4" type="video/mp4" />
+                    </video>
+                    <span class="pointer-events-none absolute inset-x-0 bottom-3 mx-auto inline-flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-white">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                    </span>
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Pieza audiovisual enfocada en ritmo, producto y experiencia.</figcaption>
+                </figure>
+                <figure class="w-[360px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group relative block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/arise/WhatsApp%20Video%202026-04-22%20at%2012.40.13.mp4" data-type="video" data-title="Arise · Video editorial 3" data-project="Arise Luxury Life Style">
+                    <video preload="metadata" muted playsinline class="h-72 w-full bg-black object-cover transition duration-300 group-hover:scale-105 pointer-events-none">
+                      <source src="assets/img/arise/WhatsApp%20Video%202026-04-22%20at%2012.40.13.mp4" type="video/mp4" />
+                    </video>
+                    <span class="pointer-events-none absolute inset-x-0 bottom-3 mx-auto inline-flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-white">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                    </span>
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Microformato para campañas orgánicas y pauta local.</figcaption>
+                </figure>
               </div>
             </div>
           </article>
 
-          <article class="overflow-hidden rounded-[2rem] border border-white/80 bg-white/70 shadow-float backdrop-blur">
-            <div class="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
-              <div class="order-2 grid grid-cols-2 gap-3 p-5 lg:order-1 sm:grid-cols-2">
-                <button type="button" class="group overflow-hidden rounded-[1.4rem] focus:outline-none" data-src="assets/img/rebozo/image.png" data-title="Rebozo 1" data-project="Rebozo Tenancingo"><img src="assets/img/rebozo/image.png" alt="Rebozo 1" class="h-52 w-full object-cover transition duration-300 group-hover:scale-105" /></button>
-                <button type="button" class="group overflow-hidden rounded-[1.4rem] focus:outline-none" data-src="assets/img/rebozo/image%20copy.png" data-title="Rebozo 2" data-project="Rebozo Tenancingo"><img src="assets/img/rebozo/image%20copy.png" alt="Rebozo 2" class="h-52 w-full object-cover transition duration-300 group-hover:scale-105" /></button>
-                <button type="button" class="group overflow-hidden rounded-[1.4rem] focus:outline-none" data-src="assets/img/rebozo/image%20copy%202.png" data-title="Rebozo 3" data-project="Rebozo Tenancingo"><img src="assets/img/rebozo/image%20copy%202.png" alt="Rebozo 3" class="h-52 w-full object-cover transition duration-300 group-hover:scale-105" /></button>
-                <button type="button" class="group overflow-hidden rounded-[1.4rem] focus:outline-none" data-src="assets/img/rebozo/image%20copy%203.png" data-title="Rebozo 4" data-project="Rebozo Tenancingo"><img src="assets/img/rebozo/image%20copy%203.png" alt="Rebozo 4" class="h-52 w-full object-cover transition duration-300 group-hover:scale-105" /></button>
-                <button type="button" class="group overflow-hidden rounded-[1.4rem] focus:outline-none sm:col-span-2" data-src="assets/img/rebozo/image%20copy%204.png" data-title="Rebozo 5" data-project="Rebozo Tenancingo"><img src="assets/img/rebozo/image%20copy%204.png" alt="Rebozo 5" class="h-60 w-full object-cover transition duration-300 group-hover:scale-105" /></button>
-              </div>
-              <div class="order-1 p-8 lg:order-2 lg:p-10">
+          <article class="overflow-hidden rounded-[2rem] border border-white/80 bg-white/75 shadow-float backdrop-blur">
+            <div class="p-8 lg:p-10">
+              <div class="max-w-3xl">
                 <span class="inline-flex rounded-full bg-[#e8f3fa] px-4 py-2 text-xs font-bold uppercase tracking-[0.3em] text-cocoa">Rebozo Tenancingo</span>
-                <h2 class="mt-4 text-3xl font-black text-cocoa">Tradición, comunidad y difusión cultural.</h2>
-                <p class="mt-4 text-base leading-8 text-cocoaLight">Proyecto familiar para llevar el rebozo a más lugares, difundir su importancia y conectar con nuevas audiencias a través de redes sociales.</p>
-                <div class="mt-6 flex flex-wrap gap-2">
-                  <span class="rounded-full bg-[#fdf0e1] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cocoa">Fotografía</span>
-                  <span class="rounded-full bg-[#e8f3fa] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cocoa">Comunidad</span>
-                  <span class="rounded-full bg-[#dff1ee] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cocoa">Storytelling</span>
-                  <span class="rounded-full bg-[#f8c48a]/30 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cocoa">Branding</span>
-                </div>
+                <h2 class="mt-4 text-3xl font-black text-cocoa">Memoria textil y difusión con raíz comunitaria.</h2>
+                <p class="mt-4 text-base leading-8 text-cocoaLight">Proyecto familiar centrado en documentar la identidad del rebozo tenancinguense, acercar su historia a públicos nuevos y fortalecer una comunicación sensible entre tradición, oficio y cultura visual contemporánea.</p>
                 <ul class="mt-6 space-y-3 text-cocoaLight">
-                  <li>• Fotografía y video para Facebook</li>
-                  <li>• Gestión de redes sociales y comunidad</li>
-                  <li>• Redacción de storytelling</li>
-                  <li>• Diseño de logotipo</li>
+                  <li>• Producción de fotografía para catálogo y redes sociales</li>
+                  <li>• Narrativa cultural para piezas informativas y publicaciones</li>
+                  <li>• Gestión de contenido con lenguaje cercano para comunidad</li>
+                  <li>• Cuidado de identidad visual y consistencia en difusión</li>
                 </ul>
+              </div>
+
+              <div class="mt-8 media-rail">
+                <figure class="w-[300px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/rebozo/image.png" data-title="Rebozo · Pieza tradicional" data-project="Rebozo Tenancingo" data-caption="Registro visual orientado a destacar textura, color y valor artesanal.">
+                    <img src="assets/img/rebozo/image.png" alt="Pieza tradicional de rebozo" class="h-72 w-full object-cover transition duration-300 group-hover:scale-105" />
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Documentación de pieza con enfoque en detalle artesanal.</figcaption>
+                </figure>
+                <figure class="w-[300px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/rebozo/image%20copy%202.png" data-title="Rebozo · Proceso y oficio" data-project="Rebozo Tenancingo" data-caption="Imagen para comunicar el vínculo entre oficio, manos y herencia cultural.">
+                    <img src="assets/img/rebozo/image%20copy%202.png" alt="Proceso artesanal del rebozo" class="h-72 w-full object-cover transition duration-300 group-hover:scale-105" />
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Contenido narrativo sobre proceso y oficio.</figcaption>
+                </figure>
+                <figure class="w-[300px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/rebozo/image%20copy%203.png" data-title="Rebozo · Presencia en comunidad" data-project="Rebozo Tenancingo" data-caption="Fotografía editorial para acercar tradición y uso cotidiano a audiencias jóvenes.">
+                    <img src="assets/img/rebozo/image%20copy%203.png" alt="Rebozo en contexto comunitario" class="h-72 w-full object-cover transition duration-300 group-hover:scale-105" />
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Escena para difusión cultural y conexión comunitaria.</figcaption>
+                </figure>
+                <figure class="w-[300px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/rebozo/image%20copy%204.png" data-title="Rebozo · Identidad visual" data-project="Rebozo Tenancingo" data-caption="Pieza visual pensada para campañas de alcance y reconocimiento de marca.">
+                    <img src="assets/img/rebozo/image%20copy%204.png" alt="Identidad visual del proyecto Rebozo" class="h-72 w-full object-cover transition duration-300 group-hover:scale-105" />
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Imagen de cierre para campañas de posicionamiento.</figcaption>
+                </figure>
               </div>
             </div>
           </article>
 
-          <article class="overflow-hidden rounded-[2rem] border border-white/80 bg-white/70 shadow-float backdrop-blur">
-            <div class="grid gap-0 lg:grid-cols-[0.95fr_1.05fr]">
-              <div class="p-8 lg:p-10">
+          <article class="overflow-hidden rounded-[2rem] border border-white/80 bg-white/75 shadow-float backdrop-blur">
+            <div class="p-8 lg:p-10">
+              <div class="max-w-3xl">
                 <span class="inline-flex rounded-full bg-[#f8c48a]/30 px-4 py-2 text-xs font-bold uppercase tracking-[0.3em] text-cocoa">CUT Tenancingo</span>
-                <h2 class="mt-4 text-3xl font-black text-cocoa">Difusión cultural con enfoque humano.</h2>
-                <p class="mt-4 text-base leading-8 text-cocoaLight">Participé en el equipo de Difusión Cultural, creando contenido para eventos, actividades escolares y materiales narrativos para recorridos y guiones.</p>
-                <div class="mt-6 flex flex-wrap gap-2">
-                  <span class="rounded-full bg-[#fdf0e1] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cocoa">Fotografía</span>
-                  <span class="rounded-full bg-[#e8f3fa] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cocoa">Diseño</span>
-                  <span class="rounded-full bg-[#dff1ee] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cocoa">Storytelling</span>
-                  <span class="rounded-full bg-[#f8c48a]/30 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cocoa">Difusión</span>
-                </div>
+                <h2 class="mt-4 text-3xl font-black text-cocoa">Cobertura cultural con mirada documental.</h2>
+                <p class="mt-4 text-base leading-8 text-cocoaLight">Colaboración en Difusión Cultural para documentar vida universitaria, eventos artísticos y actividades de comunidad. El enfoque fue construir relatos visuales útiles para convocatoria, memoria y pertenencia.</p>
                 <ul class="mt-6 space-y-3 text-cocoaLight">
-                  <li>• Fotografía y video para difusión</li>
-                  <li>• Campañas para eventos escolares y culturales</li>
-                  <li>• Storytelling para guiones y recorridos</li>
-                  <li>• Taller “Lectura creativa” para creación de personajes</li>
+                  <li>• Fotografía para actividades escolares, culturales y deportivas</li>
+                  <li>• Piezas para campañas institucionales y convocatorias</li>
+                  <li>• Storytelling para recorridos, guiones y materiales narrativos</li>
+                  <li>• Diseño de contenido orientado a participación estudiantil</li>
                 </ul>
               </div>
-              <div class="grid grid-cols-2 gap-3 p-5 sm:grid-cols-3">
-                <button type="button" class="group overflow-hidden rounded-[1.4rem] focus:outline-none" data-src="assets/img/cut/image.png" data-title="CUT 1" data-project="CUT Tenancingo"><img src="assets/img/cut/image.png" alt="CUT 1" class="h-52 w-full object-cover transition duration-300 group-hover:scale-105" /></button>
-                <button type="button" class="group overflow-hidden rounded-[1.4rem] focus:outline-none" data-src="assets/img/cut/image%20copy.png" data-title="CUT 2" data-project="CUT Tenancingo"><img src="assets/img/cut/image%20copy.png" alt="CUT 2" class="h-52 w-full object-cover transition duration-300 group-hover:scale-105" /></button>
-                <button type="button" class="group overflow-hidden rounded-[1.4rem] focus:outline-none" data-src="assets/img/cut/image%20copy%202.png" data-title="CUT 3" data-project="CUT Tenancingo"><img src="assets/img/cut/image%20copy%202.png" alt="CUT 3" class="h-52 w-full object-cover transition duration-300 group-hover:scale-105" /></button>
-                <button type="button" class="group overflow-hidden rounded-[1.4rem] focus:outline-none" data-src="assets/img/cut/image%20copy%203.png" data-title="CUT 4" data-project="CUT Tenancingo"><img src="assets/img/cut/image%20copy%203.png" alt="CUT 4" class="h-52 w-full object-cover transition duration-300 group-hover:scale-105" /></button>
-                <button type="button" class="group overflow-hidden rounded-[1.4rem] focus:outline-none" data-src="assets/img/cut/image%20copy%204.png" data-title="CUT 5" data-project="CUT Tenancingo"><img src="assets/img/cut/image%20copy%204.png" alt="CUT 5" class="h-52 w-full object-cover transition duration-300 group-hover:scale-105" /></button>
-                <button type="button" class="group overflow-hidden rounded-[1.4rem] focus:outline-none sm:col-span-3" data-src="assets/img/cut/image%20copy%205.png" data-title="CUT 6" data-project="CUT Tenancingo"><img src="assets/img/cut/image%20copy%205.png" alt="CUT 6" class="h-60 w-full object-cover transition duration-300 group-hover:scale-105" /></button>
+
+              <div class="mt-8 media-rail">
+                <figure class="w-[300px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/cut/image.png" data-title="CUT · Cobertura institucional" data-project="CUT Tenancingo" data-caption="Registro de actividades académicas para comunicación interna y externa.">
+                    <img src="assets/img/cut/image.png" alt="Cobertura institucional CUT" class="h-72 w-full object-cover transition duration-300 group-hover:scale-105" />
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Cobertura principal para difusión universitaria.</figcaption>
+                </figure>
+                <figure class="w-[300px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/cut/image%20copy%202.png" data-title="CUT · Actividades estudiantiles" data-project="CUT Tenancingo" data-caption="Imagen enfocada en participación y vida cotidiana del campus.">
+                    <img src="assets/img/cut/image%20copy%202.png" alt="Actividades estudiantiles CUT" class="h-72 w-full object-cover transition duration-300 group-hover:scale-105" />
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Escena para campañas de participación estudiantil.</figcaption>
+                </figure>
+                <figure class="w-[300px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/cut/luchadores.png" data-title="CUT · Evento cultural/deportivo" data-project="CUT Tenancingo" data-caption="Cobertura de actividad temática con lenguaje visual enérgico para redes.">
+                    <img src="assets/img/cut/luchadores.png" alt="Evento cultural o deportivo CUT" class="h-72 w-full object-cover transition duration-300 group-hover:scale-105" />
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Documento visual de evento con alto impacto de audiencia.</figcaption>
+                </figure>
+                <figure class="w-[300px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/cut/Pasted%20image.png" data-title="CUT · Material narrativo 1" data-project="CUT Tenancingo" data-caption="Pieza usada como soporte para guiones, recorridos y publicaciones culturales.">
+                    <img src="assets/img/cut/Pasted%20image.png" alt="Material narrativo CUT 1" class="h-72 w-full object-cover transition duration-300 group-hover:scale-105" />
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Apoyo visual para narrativa institucional.</figcaption>
+                </figure>
+                <figure class="w-[300px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/cut/Pasted%20image%20(2).png" data-title="CUT · Material narrativo 2" data-project="CUT Tenancingo" data-caption="Segunda pieza de serie para reforzar continuidad gráfica en contenidos.">
+                    <img src="assets/img/cut/Pasted%20image%20(2).png" alt="Material narrativo CUT 2" class="h-72 w-full object-cover transition duration-300 group-hover:scale-105" />
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Continuidad visual para publicaciones de campaña.</figcaption>
+                </figure>
+                <figure class="w-[300px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/cut/Pasted%20image%20(3).png" data-title="CUT · Material narrativo 3" data-project="CUT Tenancingo" data-caption="Tercera pieza para cierre de secuencia y composición editorial.">
+                    <img src="assets/img/cut/Pasted%20image%20(3).png" alt="Material narrativo CUT 3" class="h-72 w-full object-cover transition duration-300 group-hover:scale-105" />
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Cierre de serie para relato visual de actividades.</figcaption>
+                </figure>
               </div>
             </div>
           </article>
 
-          <article class="overflow-hidden rounded-[2rem] border border-white/80 bg-white/70 shadow-float backdrop-blur">
-            <div class="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
-              <div class="order-2 grid grid-cols-2 gap-3 p-5 lg:order-1 sm:grid-cols-2">
-                <button type="button" class="group overflow-hidden rounded-[1.4rem] focus:outline-none" data-src="assets/img/ppersonal/image.png" data-title="Proyecto personal 1" data-project="Proyecto personal"><img src="assets/img/ppersonal/image.png" alt="Proyecto personal 1" class="h-52 w-full object-cover transition duration-300 group-hover:scale-105" /></button>
-                <button type="button" class="group overflow-hidden rounded-[1.4rem] focus:outline-none" data-src="assets/img/ppersonal/image%20copy.png" data-title="Proyecto personal 2" data-project="Proyecto personal"><img src="assets/img/ppersonal/image%20copy.png" alt="Proyecto personal 2" class="h-52 w-full object-cover transition duration-300 group-hover:scale-105" /></button>
-                <button type="button" class="group overflow-hidden rounded-[1.4rem] focus:outline-none" data-src="assets/img/ppersonal/image%20copy%202.png" data-title="Proyecto personal 3" data-project="Proyecto personal"><img src="assets/img/ppersonal/image%20copy%202.png" alt="Proyecto personal 3" class="h-52 w-full object-cover transition duration-300 group-hover:scale-105" /></button>
-                <button type="button" class="group overflow-hidden rounded-[1.4rem] focus:outline-none" data-src="assets/img/ppersonal/image%20copy%203.png" data-title="Proyecto personal 4" data-project="Proyecto personal"><img src="assets/img/ppersonal/image%20copy%203.png" alt="Proyecto personal 4" class="h-52 w-full object-cover transition duration-300 group-hover:scale-105" /></button>
-                <button type="button" class="group overflow-hidden rounded-[1.4rem] focus:outline-none sm:col-span-2" data-src="assets/img/ppersonal/image%20copy%204.png" data-title="Proyecto personal 5" data-project="Proyecto personal"><img src="assets/img/ppersonal/image%20copy%204.png" alt="Proyecto personal 5" class="h-60 w-full object-cover transition duration-300 group-hover:scale-105" /></button>
-              </div>
-              <div class="order-1 p-8 lg:order-2 lg:p-10">
+          <article class="overflow-hidden rounded-[2rem] border border-white/80 bg-white/75 shadow-float backdrop-blur">
+            <div class="p-8 lg:p-10">
+              <div class="max-w-3xl">
                 <span class="inline-flex rounded-full bg-[#fdf8f3] px-4 py-2 text-xs font-bold uppercase tracking-[0.3em] text-cocoa">Proyecto personal</span>
-                <h2 class="mt-4 text-3xl font-black text-cocoa">Fotografías que dialogan con cuentos propios.</h2>
-                <p class="mt-4 text-base leading-8 text-cocoaLight">Un espacio personal donde exploro la relación entre escritura y fotografía a través de dos cuentos: “Pet cabito” y “Detalle pequeño con patas”.</p>
-                <div class="mt-6 flex flex-wrap gap-2">
-                  <span class="rounded-full bg-[#fdf0e1] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cocoa">Fotografía</span>
-                  <span class="rounded-full bg-[#e8f3fa] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cocoa">Concepto</span>
-                  <span class="rounded-full bg-[#dff1ee] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cocoa">Escritura</span>
-                  <span class="rounded-full bg-[#f8c48a]/30 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cocoa">Arte</span>
-                </div>
+                <h2 class="mt-4 text-3xl font-black text-cocoa">Serie fotoliteraria en desarrollo.</h2>
+                <p class="mt-4 text-base leading-8 text-cocoaLight">Exploración autoral donde fotografía y escritura se entrelazan para construir escenas con voz propia. Cada imagen funciona como fragmento narrativo de dos cuentos en proceso: “Pet cabito” y “Detalle pequeño con patas”.</p>
                 <ul class="mt-6 space-y-3 text-cocoaLight">
-                  <li>• Exploración visual de relatos originales</li>
-                  <li>• Fotografía conceptual</li>
-                  <li>• Construcción de atmósferas narrativas</li>
-                  <li>• Proyectos en desarrollo</li>
+                  <li>• Dirección visual de escenas con intención literaria</li>
+                  <li>• Investigación de atmósferas, símbolos y ritmo narrativo</li>
+                  <li>• Producción de serie fotográfica conceptual</li>
+                  <li>• Integración de texto corto como acompañamiento curatorial</li>
                 </ul>
+              </div>
+
+              <div class="mt-8 media-rail">
+                <figure class="w-[300px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/ppersonal/Pasted%20image.png" data-title="Proyecto personal · Escena 1" data-project="Proyecto personal" data-caption="Inicio de serie: planteamiento de atmósfera y personaje en clave poética.">
+                    <img src="assets/img/ppersonal/Pasted%20image.png" alt="Escena 1 del proyecto personal" class="h-72 w-full object-cover transition duration-300 group-hover:scale-105" />
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Apertura narrativa de la serie.</figcaption>
+                </figure>
+                <figure class="w-[300px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/ppersonal/Pasted%20image%20(2).png" data-title="Proyecto personal · Escena 2" data-project="Proyecto personal" data-caption="Continuidad visual con énfasis en gesto, textura y silencio narrativo.">
+                    <img src="assets/img/ppersonal/Pasted%20image%20(2).png" alt="Escena 2 del proyecto personal" class="h-72 w-full object-cover transition duration-300 group-hover:scale-105" />
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Variación de atmósfera y ritmo visual.</figcaption>
+                </figure>
+                <figure class="w-[300px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/ppersonal/Pasted%20image%20(3).png" data-title="Proyecto personal · Escena 3" data-project="Proyecto personal" data-caption="Pieza intermedia para consolidar tono emocional y continuidad de personaje.">
+                    <img src="assets/img/ppersonal/Pasted%20image%20(3).png" alt="Escena 3 del proyecto personal" class="h-72 w-full object-cover transition duration-300 group-hover:scale-105" />
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Nudo visual de la secuencia fotoliteraria.</figcaption>
+                </figure>
+                <figure class="w-[300px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/ppersonal/Pasted%20image%20(4).png" data-title="Proyecto personal · Escena 4" data-project="Proyecto personal" data-caption="Composición diseñada para reforzar simbolismo y lectura abierta.">
+                    <img src="assets/img/ppersonal/Pasted%20image%20(4).png" alt="Escena 4 del proyecto personal" class="h-72 w-full object-cover transition duration-300 group-hover:scale-105" />
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Exploración simbólica en segundo acto.</figcaption>
+                </figure>
+                <figure class="w-[300px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/ppersonal/Pasted%20image%20(5).png" data-title="Proyecto personal · Escena 5" data-project="Proyecto personal" data-caption="Imagen de transición hacia cierre de capítulo visual.">
+                    <img src="assets/img/ppersonal/Pasted%20image%20(5).png" alt="Escena 5 del proyecto personal" class="h-72 w-full object-cover transition duration-300 group-hover:scale-105" />
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Transición narrativa hacia desenlace.</figcaption>
+                </figure>
+                <figure class="w-[300px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/ppersonal/Pasted%20image%20(6).png" data-title="Proyecto personal · Escena 6" data-project="Proyecto personal" data-caption="Construcción de cierre emocional con lectura íntima.">
+                    <img src="assets/img/ppersonal/Pasted%20image%20(6).png" alt="Escena 6 del proyecto personal" class="h-72 w-full object-cover transition duration-300 group-hover:scale-105" />
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Clímax de la serie visual.</figcaption>
+                </figure>
+                <figure class="w-[300px] shrink-0 rounded-2xl border border-cocoa/10 bg-white p-3">
+                  <button type="button" class="group block w-full overflow-hidden rounded-xl focus:outline-none" data-src="assets/img/ppersonal/Pasted%20image%20(7).png" data-title="Proyecto personal · Escena 7" data-project="Proyecto personal" data-caption="Cierre abierto que deja una huella narrativa y visual en el espectador.">
+                    <img src="assets/img/ppersonal/Pasted%20image%20(7).png" alt="Escena 7 del proyecto personal" class="h-72 w-full object-cover transition duration-300 group-hover:scale-105" />
+                  </button>
+                  <figcaption class="mt-3 text-sm leading-6 text-cocoaLight">Cierre con tono contemplativo.</figcaption>
+                </figure>
               </div>
             </div>
           </article>
@@ -199,20 +340,32 @@
 
     <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/75 px-4 backdrop-blur-sm">
       <div class="relative w-full max-w-5xl overflow-hidden rounded-[2rem] border border-white/20 bg-white shadow-2xl">
-        <button id="closeLightbox" type="button" class="absolute right-4 top-4 z-10 rounded-full bg-cocoa px-4 py-2 text-sm font-semibold text-cream shadow-float transition hover:bg-[#4b3933]">Cerrar</button>
+        <button id="closeLightbox" type="button" aria-label="Cerrar modal" class="absolute right-4 top-4 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full bg-cocoa text-cream shadow-float transition hover:bg-[#4b3933]">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-5 w-5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
         <div class="grid gap-0 lg:grid-cols-[1.1fr_0.9fr]">
           <div class="bg-[#111827]">
             <img id="lightboxImage" src="" alt="" class="h-full max-h-[80vh] w-full object-contain" />
+            <video id="lightboxVideo" controls class="hidden h-full max-h-[80vh] w-full object-contain"></video>
           </div>
-          <div class="flex flex-col justify-between p-6 lg:p-8">
+          <div class="flex min-h-[200px] flex-col justify-end p-6 lg:min-h-[80vh] lg:p-8">
             <div>
               <p id="lightboxProject" class="text-sm font-semibold uppercase tracking-[0.3em] text-cocoaLight"></p>
               <h3 id="lightboxTitle" class="mt-3 text-3xl font-black text-cocoa"></h3>
-              <p class="mt-4 text-base leading-8 text-cocoaLight">Puedes abrir cada imagen desde la galería para verla en grande.</p>
             </div>
             <div class="mt-8 flex gap-3">
-              <button id="prevImage" type="button" class="rounded-full border border-cocoa/15 bg-cocoa px-5 py-3 text-sm font-semibold text-cream transition hover:bg-[#4b3933]">Anterior</button>
-              <button id="nextImage" type="button" class="rounded-full border border-cocoa/15 bg-white px-5 py-3 text-sm font-semibold text-cocoa transition hover:bg-[#e8f3fa]">Siguiente</button>
+              <button id="prevImage" type="button" aria-label="Imagen anterior" class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-cocoa/15 bg-cocoa text-cream transition hover:bg-[#4b3933]">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-5 w-5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+              <button id="nextImage" type="button" aria-label="Imagen siguiente" class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-cocoa/15 bg-white text-cocoa transition hover:bg-[#e8f3fa]">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="h-5 w-5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
@@ -223,6 +376,7 @@
       const items = Array.from(document.querySelectorAll('[data-src]'));
       const lightbox = document.getElementById('lightbox');
       const lightboxImage = document.getElementById('lightboxImage');
+      const lightboxVideo = document.getElementById('lightboxVideo');
       const lightboxTitle = document.getElementById('lightboxTitle');
       const lightboxProject = document.getElementById('lightboxProject');
       const closeLightbox = document.getElementById('closeLightbox');
@@ -233,8 +387,22 @@
       function openLightbox(index) {
         currentIndex = index;
         const item = items[currentIndex];
-        lightboxImage.src = item.dataset.src;
-        lightboxImage.alt = item.dataset.title;
+        const isVideo = item.dataset.type === 'video';
+
+        if (isVideo) {
+          lightboxImage.classList.add('hidden');
+          lightboxVideo.classList.remove('hidden');
+          lightboxVideo.src = item.dataset.src;
+          lightboxVideo.load();
+        } else {
+          lightboxVideo.pause();
+          lightboxVideo.removeAttribute('src');
+          lightboxVideo.classList.add('hidden');
+          lightboxImage.classList.remove('hidden');
+          lightboxImage.src = item.dataset.src;
+          lightboxImage.alt = item.dataset.title;
+        }
+
         lightboxTitle.textContent = item.dataset.title;
         lightboxProject.textContent = item.dataset.project;
         lightbox.classList.remove('hidden');
@@ -243,6 +411,7 @@
       }
 
       function closeModal() {
+        lightboxVideo.pause();
         lightbox.classList.add('hidden');
         lightbox.classList.remove('flex');
         document.body.classList.remove('overflow-hidden');
